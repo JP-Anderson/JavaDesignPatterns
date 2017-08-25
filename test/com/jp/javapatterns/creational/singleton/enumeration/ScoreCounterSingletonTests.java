@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * Created by Jp on 10/08/2017.
  */
-class ScoreCounterTest {
+class ScoreCounterSingletonTests {
 
 	@Test
 	void scoreCounterCannotBeInitializedThroughReflection() {
