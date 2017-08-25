@@ -2,7 +2,6 @@ package com.jp.javapatterns.structural.adapter.adapter;
 
 import com.jp.javapatterns.structural.adapter.adaptee.ConcreteKeyboardAndMouse;
 import com.jp.javapatterns.structural.adapter.adaptee.FirstPersonShooterEngine;
-import com.jp.javapatterns.structural.adapter.adaptee.FirstPersonShooterInput;
 import com.jp.javapatterns.structural.adapter.adaptee.KeyboardAndMouse;
 import org.junit.jupiter.api.Test;
 
@@ -22,25 +21,26 @@ class AdapterTest {
 		/* Pass in the keyboard and mouse controls to be adapted to our gamepad */
 		GamePad gamePadAdaptor = new ConcreteGamePad(keyboardAndMouse);
 
-		/* Now we can use the respective buttons on the keyboard/mouse and gamepad to carry
-		*  out the same actions in the game engine. */
+		/* We can use the keyboard and mouse to send actions to the engine*/
 		keyboardAndMouse.clickRightMouseButton();
-		assertEquals(engine.actions.get(0), new String("SHOOT"));
+		assertEquals(engine.getAction(0), new String("SHOOT"));
 
+		/* We can also use the slightly different adapter interface implemented
+		*  by the gamepad controller to trigger the keyboard/mouse interface methods*/
 		gamePadAdaptor.pullRightTrigger();
-		assertEquals(engine.actions.get(1), new String("SHOOT"));
+		assertEquals(engine.getAction(1), new String("SHOOT"));
 
 		keyboardAndMouse.pressRKey();
-		assertEquals(engine.actions.get(2), new String("RELOAD"));
+		assertEquals(engine.getAction(2), new String("RELOAD"));
 
 		gamePadAdaptor.pressX();
-		assertEquals(engine.actions.get(3), new String("RELOAD"));
+		assertEquals(engine.getAction(3), new String("RELOAD"));
 
 		keyboardAndMouse.pressSpaceBar();
-		assertEquals(engine.actions.get(4), new String("JUMP"));
+		assertEquals(engine.getAction(4), new String("JUMP"));
 
 		gamePadAdaptor.pressA();
-		assertEquals(engine.actions.get(5), new String("JUMP"));
+		assertEquals(engine.getAction(5), new String("JUMP"));
 
 	}
 

@@ -1,9 +1,8 @@
 package com.jp.javapatterns.structural.adapter.adaptee;
 
-import java.util.List;
-
 /**
- * Created by Jp on 25/08/2017.
+ * Simple interface to simulate game input passed in from the
+ * adaptee (keyboard/mouse) and adapter (game pad) controllers
  */
 public interface FirstPersonShooterInput {
 

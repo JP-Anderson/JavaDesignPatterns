@@ -1,7 +1,9 @@
 package com.jp.javapatterns.structural.adapter.adaptee;
 
 /**
- * Created by Jp on 25/08/2017.
+ * This is our original/legacy interface, the one we will be writing an adaptor for.
+ * Obviously this is a toy example, so only three input examples are given.
+ * The essence of the adapter pattern could apply to an interface with a single method.
  */
 public interface KeyboardAndMouse {
 

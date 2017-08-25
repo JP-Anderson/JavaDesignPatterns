@@ -1,7 +1,10 @@
 package com.jp.javapatterns.structural.adapter.adaptee;
 
 /**
- * Created by Jp on 25/08/2017.
+ * This is the concrete class implementing the Keyboard/Mouse interface.
+ * We will instantiate this class and use it to pass input to the 'engine'.
+ * NOTE: the KeyboardAndMouse interface is the existing interface that we need
+ * to write the adapter for. The adapter interface is GamePad
  */
 public class ConcreteKeyboardAndMouse implements KeyboardAndMouse {
 

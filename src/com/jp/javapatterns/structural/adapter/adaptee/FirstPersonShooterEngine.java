@@ -4,13 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Jp on 25/08/2017.
+ * Implementation of interface to simulate game input and resulting output
  */
 public class FirstPersonShooterEngine implements FirstPersonShooterInput {
 
-	/* Public list of string for capturing actions for testing purposes
-	 * wouldn't be public in production code! */
-	public List<String> actions = new ArrayList<>();
+	/* This list will contain the simulated actions carried out based
+	 * on controller input. In this simple example, a string is used
+	 * instead of some custom action class.
+	 */
+	private List<String> actions = new ArrayList<>();
 
 	@Override
 	public void shootWeapon() {
@@ -25,5 +27,9 @@ public class FirstPersonShooterEngine implements FirstPersonShooterInput {
 	@Override
 	public void jump() {
 		actions.add("JUMP");
+	}
+
+	public String getAction(int index) {
+		return actions.get(index);
 	}
 }
